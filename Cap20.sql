@@ -1,0 +1,25 @@
+--Capitulo 20 Procedures -- Procedimentos
+
+CREATE OR REPLACE PROCEDURE aumenta_precocurso
+    (pCod_Curso NUMBER)
+IS
+  -- Variavies
+BEGIN
+  UPDATE tcurso SET
+  VALOR = VALOR *1.5
+  WHERE COD_CURSO = pCod_Curso;
+
+-- Teste
+SELECT * FROM TCURSO;
+
+--
+EXEC AUMENTA_PRECOCURSO(1);--EXECUTA A PROCEDURE
+--
+SELECT * FROM CURSO;
+
+--COM BLOCO ANONIMO
+DECLARE
+ vCod INTEGER &codigo;
+BEGIN
+  AUMENTA_PRECOCURSO(vCod);
+END;

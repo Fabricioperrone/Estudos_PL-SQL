@@ -1,0 +1,52 @@
+-- domine o PL/SQL
+DECLARE
+ SOMA NUMBER;
+BEGIN
+  SOMA := 45+55;
+  Dbms_Output.Put_Line('Soma :'||soma);
+exception
+  WHEN OTHERS THEN
+    Raise_Application_Error(-20001, 'Erro ao somar valores');
+END;
+
+SELECT * FROM TALUNO
+SELECT * FROM TCURSO;
+SELECT * FROM TCONTRATO
+SELECT * FROM tcidade
+
+
+
+
+-- ENABLE ESTA PROCEDURE HABILITA CHAMADAS PARA PUT
+BEGIN
+ Dbms_Output.Put_Line(2000);
+ Dbms_Output.Put_Line('TESTE');
+END;
+
+-- DISABLE ESTA PROCEDURE DESABILITA  AS CHAMADAS PARA PUT
+
+BEGIN
+  Dbms_Output.DISABLE;
+  Dbms_Output.Put_Line('TESTE');
+END;
+
+
+--PUT
+--  Esta procedure recebe um parâmetro
+-- cujo o valor será armazenado na área do
+-- buffer imediatamente após a última informação
+
+BEGIN
+   Dbms_Output.Put('T');
+   Dbms_Output.Put('E');
+   Dbms_Output.Put('S');
+   Dbms_Output.Put('T');
+   Dbms_Output.Put('E');
+   Dbms_Output.new_Line;
+END;
+
+
+
+
+
+
